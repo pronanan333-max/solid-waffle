@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3>🔥 Trending Topics</h3>
+
+{% for t in trending %}
+  <p>
+    <a href="{% url 'trending_detail' t.tag %}"
+       style="text-decoration:none;">
+      <strong>#{{ t.tag }}</strong>
+    </a>
+    <br>
+    📝 {{ t.posts }} posts · 👤 {{ t.users }} users · ❤️ {{ t.likes }} likes
+  </p>
+{% empty %}
+  <p>No trends yet</p>
+{% endfor %}
+
+{% endblock %}
+
