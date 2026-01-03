@@ -6,6 +6,8 @@ load_dotenv()
 
 import dj_database_url
 
+<<<<<<< HEAD
+=======
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
@@ -15,6 +17,7 @@ cloudinary.config(
     api_key=os.getenv("CLOUDINARY_API_KEY"),
     api_secret=os.getenv("CLOUDINARY_API_SECRET"),
 )
+>>>>>>> 5065e89 (initial commit)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -48,8 +51,11 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+<<<<<<< HEAD
+=======
     "cloudinary",
     "cloudinary_storage",
+>>>>>>> 5065e89 (initial commit)
 ]
 
 MIDDLEWARE = [
@@ -141,11 +147,16 @@ USE_TZ = True
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
+<<<<<<< HEAD
+MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+=======
 DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 MEDIA_URL = "/media/"
 
 #MEDIA_URL = 'media/'
 #MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+>>>>>>> 5065e89 (initial commit)
 
 # WhiteNoise static files storage for efficient static serving
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
