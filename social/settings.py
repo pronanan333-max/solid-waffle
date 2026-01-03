@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
@@ -130,8 +132,8 @@ USE_TZ = True
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
-MEDIA_URL = 'media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
 # WhiteNoise static files storage for efficient static serving
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
@@ -189,3 +191,9 @@ DOCKERHUB_TOKEN = os.getenv("DOCKERHUB_TOKEN")
 
 DO_API_TOKEN = os.getenv("DO_API_TOKEN")
 DO_APP_ID = os.getenv("DO_APP_ID")
+
+CLOUDINARY_STORAGE = {
+    "CLOUD_NAME": os.environ.get("CLOUD_NAME"),
+    "API_KEY": os.environ.get("API_KEY"),
+    "API_SECRET": os.environ.get("API_SECRET"),
+}
