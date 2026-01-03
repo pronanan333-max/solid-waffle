@@ -7,3 +7,6 @@ Pillow
 stripe
 django-allauth
 whitenoise
+cloudinary
+django-cloudinary-storage
+djangorestframework
